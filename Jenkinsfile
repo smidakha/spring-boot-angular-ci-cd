@@ -8,7 +8,7 @@ pipeline {
         PATH = "${JAVA_HOME}/bin:${MAVEN_HOME}/bin:${env.PATH}"
     }
     tools {
-     nodejs 'Node'
+     nodejs 'node'
     }
 
 
