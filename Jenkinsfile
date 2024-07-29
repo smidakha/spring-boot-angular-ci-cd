@@ -23,7 +23,9 @@ pipeline {
             }
         }
         
-        stage('Build Backend') {
+        stage('parallel stage') {
+          parallel {
+           stage('Build Backend') {
             steps {
                 script {
                        dir('/var/lib/jenkins/workspace/pipeline-back/spring-boot-angular-16-crud-example/spring-boot-server') {
@@ -32,12 +34,9 @@ pipeline {
 
               			 }
 
-   					 }
+   				   }
 				}
-    	}
-
-
-        stage('Build Frontend') {
+	   stage('Build Frontend') {
             steps {
                 script {
                     dir('var/lib/jenkins/workspace/pipeline-back/spring-boot-angular-16-crud-example/') {
@@ -47,6 +46,11 @@ pipeline {
                 }
             }
         }
+			}
+    	}
+
+
+       
 
     	
 
