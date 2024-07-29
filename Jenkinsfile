@@ -42,8 +42,7 @@ pipeline {
                 script {
                     dir('var/lib/jenkins/workspace/pipeline-back/spring-boot-angular-16-crud-example/') {
                         sh 'npm install'
-                        //sh 'ng serve --port 8081'
-                        sh 'npm version'
+                	 sh 'ng build --prod'
                     }
                 }
             }
