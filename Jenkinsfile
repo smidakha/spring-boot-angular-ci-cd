@@ -36,6 +36,7 @@ pipeline {
 
    				   }
 				}
+				}
 	   stage('Build Frontend') {
             steps {
                 script {
