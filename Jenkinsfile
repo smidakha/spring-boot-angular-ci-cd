@@ -7,9 +7,6 @@ pipeline {
         MAVEN_HOME = tool name: 'Maven', type: 'maven' // Make sure Maven is configured in Jenkins
         PATH = "${JAVA_HOME}/bin:${MAVEN_HOME}/bin:${env.PATH}"
     }
-    tools {
-    nodejs 'NodeJS11.14.0'
-     }
 
 
     stages {
