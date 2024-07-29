@@ -6,6 +6,8 @@ pipeline {
         JAVA_HOME = tool name: 'JDK17', type: 'jdk' // Make sure JDK11 is configured in Jenkins
         MAVEN_HOME = tool name: 'Maven', type: 'maven' // Make sure Maven is configured in Jenkins
         PATH = "${JAVA_HOME}/bin:${MAVEN_HOME}/bin:${env.PATH}"
+        env.NODEJS_HOME = "${tool 'NodeJsv20.15.1'}"
+        env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
     }
 
 
@@ -42,8 +44,6 @@ pipeline {
             steps {
                 script {
                     dir('/var/lib/jenkins/workspace/pipeline-back/spring-boot-angular-16-crud-example/angular-16-client') {
-                     sh 'apt update'
-                     sh 'apt install nodejs'
                      sh 'node -v'
                     }
                 }
