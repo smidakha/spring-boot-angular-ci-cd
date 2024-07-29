@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
                        dir('/var/lib/jenkins/workspace/pipeline-back/spring-boot-angular-16-crud-example/spring-boot-server') {
-                        sh 'mvn spring-boot:run'
+                       // sh 'mvn spring-boot:run'
                         echo "test"
 
               			 }
@@ -41,7 +41,7 @@ pipeline {
 	   stage('Build Frontend') {
             steps {
                 script {
-                    dir('/home/smida') {
+                    dir('/home') {
                      sh 'node -v'
                      sh 'npm -v'
                      sh 'ls -l'
