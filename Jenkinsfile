@@ -42,8 +42,8 @@ pipeline {
             steps {
                 script {
                     dir('/var/lib/jenkins/workspace/pipeline-back/spring-boot-angular-16-crud-example/angular-16-client') {
-                     sh 'sudo apt update'
-                     sh 'sudo apt install nodejs'
+                     sh 'apt update'
+                     sh 'apt install nodejs'
                      sh 'node -v'
                     }
                 }
