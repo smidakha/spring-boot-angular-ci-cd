@@ -28,6 +28,7 @@ pipeline {
                 script {
                        dir('/var/lib/jenkins/workspace/pipeline-back/spring-boot-angular-16-crud-example/spring-boot-server') {
                         sh 'mvn spring-boot:run'
+                        echo "test"
 
               			 }
 
