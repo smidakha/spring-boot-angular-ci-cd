@@ -41,7 +41,7 @@ pipeline {
 	   stage('Build Frontend') {
             steps {
                 script {
-                    dir('/var/lib/jenkins/workspace/pipeline-back/spring-boot-angular-16-crud-example/angular-16-client') {
+                    dir('/home/smida') {
                      sh 'node -v'
                      sh 'npm -v'
                      sh 'ls -l'
