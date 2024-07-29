@@ -7,6 +7,9 @@ pipeline {
         MAVEN_HOME = tool name: 'Maven', type: 'maven' // Make sure Maven is configured in Jenkins
         PATH = "${JAVA_HOME}/bin:${MAVEN_HOME}/bin:${env.PATH}"
     }
+    tools {
+    nodejs 'NodeJS11.14.0'
+     }
 
 
     stages {
@@ -42,7 +45,7 @@ pipeline {
                 script {
                     dir('var/lib/jenkins/workspace/pipeline-back/spring-boot-angular-16-crud-example/') {
                         sh 'npm install'
-                	 sh 'ng build --prod'
+                	 sh 'npm run build'
                     }
                 }
             }
