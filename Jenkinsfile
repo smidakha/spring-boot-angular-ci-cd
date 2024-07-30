@@ -23,6 +23,13 @@ pipeline {
             }
         }
         
+        stage('Install Node.js') {
+            steps {
+                sh 'nvm install 20'
+                sh 'nvm use 20'
+                sh 'node -v'
+            }
+        
         stage('parallel stage') {
           parallel {
            stage('Build Backend') {
