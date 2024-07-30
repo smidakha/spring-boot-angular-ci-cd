@@ -29,9 +29,18 @@ pipeline {
                 script {
                     // Install Node.js 20 using nvm
                     
-                    
-                    
-               sh 'sudo -S npm install -g n'
+                  sh '''
+                    # Verify Node.js version
+                    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+                    # Run your build steps
+                    nvm install node
+                    nvm use node
+
+                '''
                     
              
                     // Verify the Node.js version
