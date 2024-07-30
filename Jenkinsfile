@@ -6,7 +6,7 @@ pipeline {
         JAVA_HOME = tool name: 'JDK17', type: 'jdk' // Make sure JDK11 is configured in Jenkins
         MAVEN_HOME = tool name: 'Maven', type: 'maven' // Make sure Maven is configured in Jenkins
         PATH = "${JAVA_HOME}/bin:${MAVEN_HOME}/bin:${env.PATH}"
-        NODE_HOME = tool name: 'NodeJS 20.15.1', type: 'node'
+
     }
 
 
@@ -24,6 +24,33 @@ pipeline {
             }
         }
         
+       stage('Setup') {
+            steps {
+                script {
+                    // Install Node.js 20 using nvm
+                    sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash'
+                    sh '. ~/.nvm/nvm.sh && nvm install 20'
+                }
+            }
+        }
+
+        stage('Test Node.js Version') {
+            steps {
+                script {
+                    // Ensure Node.js 20 is installed and being used
+                    sh '. ~/.nvm/nvm.sh && nvm use 20 && node -v'
+                }
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    // Run npm install to install dependencies
+                    sh '. ~/.nvm/nvm.sh && nvm use 20 && npm install'
+                }
+            }
+        }
 
         stage('parallel stage') {
           parallel {
