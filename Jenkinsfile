@@ -31,7 +31,7 @@ pipeline {
                     
                     
                     
-               sh 'sudo npm install -g n'
+               sh 'sudo -S npm install -g n'
                     
              
                     // Verify the Node.js version
