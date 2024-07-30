@@ -101,7 +101,7 @@ export NVM_DIR="$HOME/.nvm"
                         # Verify Node.js version
                         node -v
                         npm install
-                        ng serve --port 8082
+                        ng serve --port 8081
 
 
 
