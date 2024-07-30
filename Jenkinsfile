@@ -6,6 +6,7 @@ pipeline {
         JAVA_HOME = tool name: 'JDK17', type: 'jdk' // Make sure JDK11 is configured in Jenkins
         MAVEN_HOME = tool name: 'Maven', type: 'maven' // Make sure Maven is configured in Jenkins
         PATH = "${JAVA_HOME}/bin:${MAVEN_HOME}/bin:${env.PATH}"
+        NODE_HOME = tool name: 'Node 20.15.1', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
     }
 
 
@@ -23,6 +24,7 @@ pipeline {
             }
         }
         
+
         stage('parallel stage') {
           parallel {
            stage('Build Backend') {
@@ -40,7 +42,9 @@ pipeline {
 	   stage('Build Frontend') {
             steps {
                 script {
+                    dir('/var/lib/jenkins/workspace/pipeline-back/spring-boot-angular-16-crud-example/angular-16-client') {
                      sh 'node -v'
+                    }
                 }
             }
         }
