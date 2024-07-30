@@ -84,6 +84,29 @@ export NVM_DIR="$HOME/.nvm"
             steps {
                 script {
                     dir('/var/lib/jenkins/workspace/pipeline-back/spring-boot-angular-16-crud-example/angular-16-client') {
+                    
+                   sh '''
+                    # Verify Node.js version
+                    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+                    # Run your build steps
+
+                   nvm install 18.19.0
+                        nvm use 18.19.0
+                        nvm alias default 18.19.0
+
+                        # Verify Node.js version
+                        node -v
+                        npm install
+                        ng serve --port 8082
+
+
+
+                '''
+                    
                      sh 'node -v'
                     }
                 }
