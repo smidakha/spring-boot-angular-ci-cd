@@ -28,10 +28,19 @@ pipeline {
             steps {
                 script {
                     // Install Node.js 20 using nvm
-                   sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash'
-                   sh 'export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
-                   sh 'nvm install 18.19.0'
+               sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash'
+                    
+                    // Source NVM script
+                    sh '. ~/.nvm/nvm.sh'
+
+                    // Install the required Node.js version
+                    sh 'nvm install 18.19.0'
+                    
+                    // Use the installed Node.js version
+                    sh 'nvm use 18.19.0'
+                    
+                    // Verify the Node.js version
+                    sh 'node -v'
 
 
                 }
