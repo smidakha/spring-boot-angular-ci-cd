@@ -20,14 +20,12 @@ RUN apt-get update && \
 ENV MAVEN_HOME /opt/maven
 ENV PATH $MAVEN_HOME/bin:$PATH
 
-# Copier le fichier de configuration Maven (si vous en avez un)
- COPY settings.xml /root/.m2/settings.xml
 
 # Copier le projet dans le conteneur
  COPY . /app
  
  # Définir la commande par défaut (si vous avez un point d'entrée)
-  CMD ["mvn", " spring-boot:run"]
+  CMD ["mvn", "spring-boot" ":run"]
 
 # Make port 8080 available to the world outside this container
 EXPOSE 8081
