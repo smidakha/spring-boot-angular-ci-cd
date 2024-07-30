@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the project jar file into the container at /app
-Copy target/*.jar app.jar
+#Copy target/*.jar app.jar
 
 # Téléchargez Maven
 ENV MAVEN_VERSION=3.8.6
