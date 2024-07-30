@@ -28,8 +28,12 @@ pipeline {
             steps {
                 script {
                     // Install Node.js 20 using nvm
-                    sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash'
-                    sh '. ~/.nvm/nvm.sh && nvm install 20'
+                   sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash'
+                   sh 'export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
+                   sh 'nvm install 18.19.0'
+
+
                 }
             }
         }
