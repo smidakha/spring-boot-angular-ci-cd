@@ -6,7 +6,7 @@ pipeline {
         JAVA_HOME = tool name: 'JDK17', type: 'jdk' // Make sure JDK11 is configured in Jenkins
         MAVEN_HOME = tool name: 'Maven', type: 'maven' // Make sure Maven is configured in Jenkins
         PATH = "${JAVA_HOME}/bin:${MAVEN_HOME}/bin:${env.PATH}"
-        NODE_HOME = tool name: 'Node 20.15.1', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
+        NODE_HOME = tool name: 'NodeJS 20.15.1', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
     }
 
 
