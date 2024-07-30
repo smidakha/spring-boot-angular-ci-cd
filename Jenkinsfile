@@ -37,8 +37,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
                     # Run your build steps
-                    nvm install node
-                    nvm use node
+
+                   nvm install 18.19.0
+                        nvm use 18.19.0
+                        nvm alias default 18.19.0
+
+                        # Verify Node.js version
+                        node -v
 
                 '''
                     
