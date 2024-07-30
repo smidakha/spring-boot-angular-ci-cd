@@ -38,19 +38,11 @@ pipeline {
             steps {
                 script {
                     // Ensure Node.js 20 is installed and being used
-                    sh '. ~/.nvm/nvm.sh && nvm use 20 && node -v'
+                    sh  'node -v'
                 }
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                script {
-                    // Run npm install to install dependencies
-                    sh '. ~/.nvm/nvm.sh && nvm use 20 && npm install'
-                }
-            }
-        }
 
         stage('parallel stage') {
           parallel {
