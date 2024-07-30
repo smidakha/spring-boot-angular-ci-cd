@@ -40,9 +40,7 @@ pipeline {
 	   stage('Build Frontend') {
             steps {
                 script {
-                    dir('/var/lib/jenkins/workspace/pipeline-back/spring-boot-angular-16-crud-example/angular-16-client') {
                      sh 'node -v'
-                    }
                 }
             }
         }
