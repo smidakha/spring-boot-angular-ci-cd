@@ -29,7 +29,7 @@ pipeline {
                 sh 'nvm use 20'
                 sh 'node -v'
             }
-        
+        }
         stage('parallel stage') {
           parallel {
            stage('Build Backend') {
