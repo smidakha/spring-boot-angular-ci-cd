@@ -68,18 +68,16 @@ export NVM_DIR="$HOME/.nvm"
 
         stage('parallel stage') {
           parallel {
-           stage('Build Backend') {
+	   stage('Build Docker Images') {
             steps {
                 script {
-                       dir('/var/lib/jenkins/workspace/pipeline-back/spring-boot-angular-16-crud-example/spring-boot-server') {
-                        sh 'mvn spring-boot:run'
-                        echo "test"
+                    dir('/var/lib/jenkins/workspace/pipeline-back/spring-boot-angular-16-crud-example/spring-boot-server') {
+                        sh 'docker build -t spring-backend .'
+                    }
+                }
+            }
+        }
 
-              			 }
-
-   				   }
-				}
-				}
 	   stage('Build Frontend') {
             steps {
                 script {
@@ -112,6 +110,10 @@ export NVM_DIR="$HOME/.nvm"
                 }
             }
         }
+        
+                
+        
+        
 			}
     	}
 
