@@ -4,7 +4,7 @@ pipeline {
         GIT_REPO_URL = 'https://github.com/smidakha/spring-boot-angular-ci-cd.git'
         GIT_BRANCH = 'main'
         SPRINGBOOT_IMAGE = 'spring-boot-app'
-        ANGULAR_IMAGE = 'angular-app
+        ANGULAR_IMAGE = 'angular-app'
 
     }
 
