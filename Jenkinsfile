@@ -28,7 +28,9 @@ pipeline {
              steps {
                 script {    
                            
-                    	  sh 'docker build -t ${SPRINGBOOT_IMAGE} .'
+                    	//  sh 'docker build -t ${SPRINGBOOT_IMAGE} .'
+                    	sh 'pwd'
+                    	sh 'ls -ltr'
                      
                     
                 }
@@ -38,7 +40,9 @@ pipeline {
 	    steps {
                 script {
                      
-                         sh 'docker build -t ${ANGULAR_IMAGE} .'
+                         // sh 'docker build -t ${ANGULAR_IMAGE} .'
+                         sh 'pwd'
+                    	sh 'ls -ltr'
                     
                 }
             }
