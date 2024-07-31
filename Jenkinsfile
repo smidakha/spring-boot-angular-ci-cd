@@ -27,14 +27,16 @@ pipeline {
            stage('Build Backend') {
              steps {
                 script {
-                    docker.build("${SPRINGBOOT_IMAGE}", "-f /projects/spring-boot-angular-16-crud-example/spring-boot-server/Dockerfile .")
+                    cd /projects/spring-boot-angular-16-crud-example/spring-boot-server
+                    sh 'docker build -t ${SPRINGBOOT_IMAGE} .'
                 }
             }
 				}
 	   stage('Build Frontend') {
 	    steps {
                 script {
-                    docker.build("${ANGULAR_IMAGE}", "-f /projects/spring-boot-angular-16-crud-example/angular-16-client/Dockerfile .")
+                    cd /projects/spring-boot-angular-16-crud-example/angular-16-client
+                    sh 'docker build -t ${ANGULAR_IMAGE} .'
                 }
             }
 
