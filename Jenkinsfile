@@ -28,7 +28,7 @@ pipeline {
              steps {
                 script {
                     sh 'cd /home/smida/projects/spring-boot-angular-16-crud-example/spring-boot-server/'
-                    sh 'docker build -t ${SPRINGBOOT_IMAGE} .'
+                    sh 'docker build -t ${SPRINGBOOT_IMAGE} -f Dockerfile .'
                 }
             }
 				}
@@ -36,7 +36,7 @@ pipeline {
 	    steps {
                 script {
                     sh 'cd /home/smida/projects/spring-boot-angular-16-crud-example/angular-16-client/'
-                    sh 'docker build -t ${ANGULAR_IMAGE} .'
+                    sh 'docker build -t ${ANGULAR_IMAGE} -f Dockerfile .'
                 }
             }
 
