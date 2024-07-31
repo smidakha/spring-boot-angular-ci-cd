@@ -26,11 +26,16 @@ pipeline {
           parallel {
            stage('Build Backend') {
              steps {
-                script {    
+                script {   
+                
+                       dir('spring-boot-server') {
+                        sh 'pwd'
+                        sh 'ls -ltr'
+                    }
+ 
                            
                     	//  sh 'docker build -t ${SPRINGBOOT_IMAGE} .'
-                    	sh 'pwd'
-                    	sh 'ls -ltr'
+                    	
                      
                     
                 }
