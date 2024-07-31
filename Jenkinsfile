@@ -28,8 +28,8 @@ pipeline {
              steps {
                 script {
                     dir('spring-boot-angular-16-crud-example') {
-                    
-                    	    sh 'docker build -t ${SPRINGBOOT_IMAGE} -f Dockerfile-spring .'
+                            sh 'ls -ltr'
+                    	    //sh 'docker build -t ${SPRINGBOOT_IMAGE} -f Dockerfile-spring .'
                     }
                      
                     
@@ -40,8 +40,8 @@ pipeline {
 	    steps {
                 script {
                      dir('spring-boot-angular-16-crud-example') {
-                    
-                           sh 'docker build -t ${ANGULAR_IMAGE} -f Dockerfile-angular .'
+                           sh 'ls -ltr'
+                           //sh 'docker build -t ${ANGULAR_IMAGE} -f Dockerfile-angular .'
                     }
                     
                 }
