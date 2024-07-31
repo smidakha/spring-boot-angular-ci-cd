@@ -26,11 +26,10 @@ pipeline {
           parallel {
            stage('Build Backend') {
              steps {
-                script {
-                    dir('spring-boot-angular-16-crud-example') {
+                script {    
+                            sh 'pwd'
                             sh 'ls -ltr'
                     	    //sh 'docker build -t ${SPRINGBOOT_IMAGE} -f Dockerfile-spring .'
-                    }
                      
                     
                 }
