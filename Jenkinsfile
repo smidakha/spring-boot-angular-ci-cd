@@ -29,26 +29,18 @@ pipeline {
                 script {   
                 
                        dir('spring-boot-server') {
-                        sh 'pwd'
-                        sh 'ls -ltr'
+                        sh 'docker build -t ${SPRINGBOOT_IMAGE} .'
                     }
  
-                           
-                    	//  sh 'docker build -t ${SPRINGBOOT_IMAGE} .'
-                    	
-                     
-                    
                 }
             }
 				}
 	   stage('Build Frontend') {
 	    steps {
                 script {
-                     
-                         // sh 'docker build -t ${ANGULAR_IMAGE} .'
-                         sh 'pwd'
-                    	sh 'ls -ltr'
-                    
+                  dir('angular-16-client') {
+                        sh 'docker build -t ${ANGULAR_IMAGE} .'
+                    }
                 }
             }
 
