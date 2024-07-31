@@ -27,15 +27,15 @@ pipeline {
            stage('Build Backend') {
              steps {
                 script {
-                    //sh 'docker build -t ${SPRINGBOOT_IMAGE} -f Dockerfile-spring .'
-                    sh 'cat Dockerfile-spring'
+                    sh 'docker build -t ${SPRINGBOOT_IMAGE} -f Dockerfile-spring .'
+                    
                 }
             }
 				}
 	   stage('Build Frontend') {
 	    steps {
                 script {
-                    //sh 'docker build -t ${ANGULAR_IMAGE} -f Dockerfile-angular .'
+                    sh 'docker build -t ${ANGULAR_IMAGE} -f Dockerfile-angular .'
                 }
             }
 
