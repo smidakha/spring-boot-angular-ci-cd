@@ -60,13 +60,5 @@ pipeline {
         }
     }
  
-      post {
-        always {
-            script {
-                // Clean up any running containers
-                sh 'docker rm -f spring-boot-app || true'
-                sh 'docker rm -f angular-app || true'
-            }
-        }
-    }
+    
 }
